@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter, useSearchParams } from 'next/navigation';
 import RegistrationForm from '@/components/Auth/RegistrationForm';
+import Head from 'next/head';
 
 const Register = () => {
   const router = useRouter();
@@ -79,6 +80,10 @@ const Register = () => {
 
   return (
     <>
+    <Head>
+      <title>Registration | BitList</title>
+      <meta name="description" content="Register on BitList and start trading today" />
+    </Head>
     <div className='auth-wrapper'>
       {!token && (
         <div className="auth-container">

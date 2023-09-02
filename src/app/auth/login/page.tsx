@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import Cookies from 'js-cookie';
 import { setUser, setIsAuth } from '@/redux/slices/UserSlice';
+import Head from 'next/head';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,11 @@ const Login = () => {
    
   };
   return (
+    <>
+    <Head>
+      <title>Login | BitList</title>
+      <meta name="description" content="Login on BitList and start trading today" />
+    </Head>
     <div className='auth-wrapper'>
       <div className="auth-container">
       <h2>Welcome back!</h2>
@@ -76,6 +82,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    </>
   )
 }
 
