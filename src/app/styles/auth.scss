@@ -19,6 +19,7 @@
       padding: 20px;
       border-radius: 8px;
     }
+    
   
     h2 {
       text-align: center;
@@ -32,7 +33,15 @@
         margin-bottom: 5%;
 
     }
-  
+    .invalidToken{
+      @media screen and (max-width: 768px) {
+          h2{
+            margin-top: 5%;
+            font-size: 24px; 
+
+          }
+      }
+    }
     .error-message {
       color: red;
       padding: 10px;

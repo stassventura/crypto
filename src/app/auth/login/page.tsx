@@ -2,7 +2,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
 import Cookies from 'js-cookie';
 import { setUser, setIsAuth } from '@/redux/slices/UserSlice';
 import Head from 'next/head';
@@ -14,6 +15,14 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const isAuth = useSelector((state: RootState) => state.User.isAuth);
+
+
+  useEffect(() => {
+    if(isAuth){
+      router.push('/')
+    }
+  }, [isAuth, router])
 
   useEffect(() => {
     if(error !== ''){

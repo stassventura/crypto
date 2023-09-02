@@ -4,10 +4,13 @@ import axios from 'axios';
 import { useRouter, useSearchParams } from 'next/navigation';
 import RegistrationForm from '@/components/Auth/RegistrationForm';
 import Head from 'next/head';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { RootState } from '@/redux/store';
 
 const Register = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
+  const isAuth = useSelector((state: RootState) => state.User.isAuth);
   const [error, setError] = useState('');
   const [tokenInvalid, setTokenInvalid] = useState('');
   const [isTokenValid, setIsTokenValid] = useState(false)
@@ -16,6 +19,11 @@ const Register = () => {
   const token = searchParams.get('token')
   const emailUrl = searchParams.get('email')
   
+useEffect(() => {
+  if(isAuth){
+    router.push('/')
+  }
+}, [isAuth, router])
 
   useEffect(() => {
     
@@ -110,7 +118,7 @@ const Register = () => {
       </div>
       )}
       {token && tokenInvalid.length > 0 &&(
-        <div className='auth-container'>
+        <div className='auth-container invalidToken'>
         <h2>{tokenInvalid} </h2>
 
         </div>
