@@ -22,7 +22,6 @@ export async function POST(request: NextRequest) {
             // Если display false, обновляем на true
             existingCryptocurrency.display = true;
             await existingCryptocurrency.save();
-            console.log('Updated display to true!');
             return new NextResponse('Updated display to true!');
 
         } else {
@@ -32,7 +31,6 @@ export async function POST(request: NextRequest) {
             });
 
             await newCryptocurrency.save();
-            console.log('saved successfully!');
             return new NextResponse('saved successfully!');
         }
 

@@ -29,7 +29,6 @@ const AdminPanel = () => {
     const [deleteUserSuccess, setDeleteUsetSuccess] = useState('')
     const fetchCrypto = () =>{
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/cryptoList`).then((res)=>{
-            console.log(res.data)
             setCryptoData(res.data)
         })
     }
@@ -88,14 +87,12 @@ const AdminPanel = () => {
             setSymbol('')
         }).catch((error)=>{
             if (error.response && error.response.status === 409) {
-                console.log(error.response.data); 
                 setErrorInAddingCrypto(error.response.data)
                 setAsset('')
                 setSymbol('')
             }
         })
 
-        console.log(asset, symbol)
     }
     const handleRemoveCryptoSubmit = (e: any) =>{
         e.preventDefault();
@@ -103,13 +100,11 @@ const AdminPanel = () => {
            asset: asset,
            symbol: symbol
         }).then((res) => {
-            console.log(res.data);
             fetchCrypto()
             setAsset('')
             setSymbol('')
         })
 
-        console.log(asset, symbol)
     }
     const transferMoney = (e: any) =>{
         e.preventDefault();
@@ -118,7 +113,6 @@ const AdminPanel = () => {
            currency: symbol,
            amount: amount
         }).then((res) => {
-            console.log(res.data);
             if(res.data.status !== 200){
                 setTransferError(res.data.message)
                 setEmailTransfer('')
@@ -132,7 +126,6 @@ const AdminPanel = () => {
             }
         })
 
-        console.log(emailTransfer, symbol, amount)
     }
     const deleteUser = (e: any) => {
         e.preventDefault();
@@ -142,14 +135,11 @@ const AdminPanel = () => {
             }
         })
         .then(response => {
-            console.log(response.data)
             setDeleteUsetSuccess(response.data)
         })
         .catch(error => {
             setDeleteUserError(error.response.data)
         });
-        console.log(emailDelete)
-
     }
     
   return (

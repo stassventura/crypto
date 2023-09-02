@@ -9,8 +9,8 @@ const transport = nodemailer.createTransport({
     host: "sandbox.smtp.mailtrap.io",
     port: 2525,
     auth: {
-      user: "9c7820e3a26727",
-      pass: "39f2e7bc834339"
+      user: process.env.MAILTRAP_USER,
+      pass: process.env.MAILTRAP_PASS
     }
 });
 
@@ -70,7 +70,6 @@ export async function POST(request: NextRequest) {
   
       await newVerificationEntry.save();
       await sendEmail(email, 'Registration confirmation', `${process.env.NEXT_PUBLIC_SERVER_URL}/auth/register?email=${email}&token=${newVerificationEntry.token}`);
-      console.log('Verification entry saved and email sent successfully!');
       return NextResponse.json({  message: "Registration successful. Please check your email to confirm.", status: 200 });
   
     } catch (error) {
