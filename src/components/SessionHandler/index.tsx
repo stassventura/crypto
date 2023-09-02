@@ -2,13 +2,10 @@
 import React, { useEffect } from 'react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
+import { useDispatch } from 'react-redux';
 import { setUser, setIsAuth, setIsLoading } from '@/redux/slices/UserSlice';
-import LoadingPage from '../LoadingPage';
 const SessionHandler = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector((state: RootState) => state.User.isLoading);
 
   useEffect(() => {
     const token = Cookies.get('token');
@@ -43,10 +40,7 @@ const SessionHandler = () => {
     }
   }, [dispatch]);
 
-  return (
-      <> 
-        {isLoading &&  <LoadingPage/>}
-      </>);
+  return null;
 };
 
 export default SessionHandler;

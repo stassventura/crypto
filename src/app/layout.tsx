@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Footer from "@/components/Footer";
 import Providers from "@/redux/Provider";
 import SessionHandler from "@/components/SessionHandler";
+import LoadingPage from "@/components/LoadingPage";
 
 
 export const metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
       </Head>
       <body>
           <Providers>
+            <LoadingPage/>
             <SessionHandler/>
             <Header/>
               {children}
