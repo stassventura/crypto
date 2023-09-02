@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+.footerWrapper{
+    padding-top: 62px;
+    border-top: 1px solid #252C41;
+    padding-bottom: 32px;
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 600px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .row{
+            width: fit-content;
+            display: flex;
+            justify-content: space-between;
+
+            .col{
+                .socialMediaList{
+                    margin-top: 48px;
+                    display: flex;
+                    gap: 16px;
+                    @media (max-width: 600px) {
+                        width: fit-content;
+                        margin: 0 auto;
+                        margin-top: 48px;
+                    }
+                }
+                .actions{
+                    margin-top: 67px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+            }
+        }
+        .nav{
+            display: flex;
+            gap: 56px;
+            width: fit-content;
+                .list{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 28px;
+                    .listItem{
+                        color: #464E62;
+                        font-size: 18px;
+                        font-weight: 445;
+                    }
+                }
+        }
+    }
+    .rightDeserved{
+        margin-top: 64px;
+        text-align: center;
+        color: #27314A;
+        font-family: 'Manrope', sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; 
+    }
+}

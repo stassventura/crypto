@@ -1,0 +1,198 @@
+.admin-panel-wrapper {
+    color: #FFF;
+    width: 100%;
+    min-height: calc(100vh - 98px);
+    height: fit-content;
+    border-top: 1px solid #252c41;
+    display: flex;
+    justify-content: center;
+    @media (max-width: 1000px) {
+        min-height: calc(100vh - 120px);
+    }
+
+    .adminPanel{
+        margin: 40px 0;
+        .title{
+            font-size: 28px;
+            text-align: center;
+        }
+        .list{
+            text-align: center;
+            font-size: 16px;
+            color: #464e62;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+        .cryptolist{
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            width: fit-content;
+            margin: 5px auto;
+        }
+
+        .cryptoItem{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            .plus{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: 1px solid #252c41;
+                background-color: #252c41;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 21px;
+                cursor: pointer;
+            }
+            
+        }
+        .actions{
+            display: flex;  
+            gap: 20px;
+            width: fit-content;
+            margin: 0 auto;
+            margin-top: 25px;
+            .cryptoItem{
+                font-size: 12px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .active{
+                color: green;
+            }
+        }
+        .hided{
+            color: red;
+        }
+        .form-add-crypto{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 20px;
+           form{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            input{
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                background: radial-gradient(100.04% 100% at 50% 0%, #26314E 0%, #252B3D 100%);
+                padding: 8px;
+                border-radius: 4px;
+                font-size: 12px;
+                &::placeholder{
+                    font-size: 14px;
+                    color: #6D799C;
+                    font-weight: 500;
+                }
+            }
+            .addNewCryptoBtn{
+                width: 100%;
+                padding: 3px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+                max-width: 300px;
+
+                background: radial-gradient(100.04% 100% at 50% 0%, #66CBF9 0%, #0FB5FF 100%);            
+            }
+           }
+        }
+        .delete-user-form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+           form{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            input{
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                background: radial-gradient(100.04% 100% at 50% 0%, #26314E 0%, #252B3D 100%);
+                padding: 8px;
+                border-radius: 4px;
+                font-size: 12px;
+                &::placeholder{
+                    font-size: 14px;
+                    color: #6D799C;
+                    font-weight: 500;
+                }
+            }
+            .deleteUserBtn{
+                width: 100%;
+                padding: 3px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+                max-width: 300px;
+
+                background: radial-gradient(100.04% 100% at 50% 0%, #66CBF9 0%, #0FB5FF 100%);            
+            }
+           }
+        }
+        .form-transfer-money{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+           form{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            input{
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                background: radial-gradient(100.04% 100% at 50% 0%, #26314E 0%, #252B3D 100%);
+                padding: 8px;
+                border-radius: 4px;
+                font-size: 12px;
+                &::placeholder{
+                    font-size: 14px;
+                    color: #6D799C;
+                    font-weight: 500;
+                }
+            }
+            .transerBtn{
+                width: 100%;
+                padding: 3px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+                max-width: 300px;
+
+                background: radial-gradient(100.04% 100% at 50% 0%, #66CBF9 0%, #0FB5FF 100%);            
+            }
+           }
+        }
+        .error{
+            text-align: center;
+            padding: 5px 0;
+            color: red;
+            font-size: 12px;
+        }
+        .success{
+            text-align: center;
+            padding: 5px 0;
+            color: greenyellow;
+            font-size: 12px;
+        }
+    }
+}

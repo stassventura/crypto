@@ -1,0 +1,331 @@
+.headerWrapper{
+    width: 100%;
+    height: 98px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #08090B;
+    .header{
+        display: flex;
+        align-items: center;
+        height: 98px;
+        position: relative;
+
+        @media (max-width: 1000px) {
+            padding-top: 20px;
+            height: 120px;
+            align-items: baseline;
+            background-color: #08090B;
+          }
+        .devider{
+            margin: 0 32px;
+            @media (max-width: 1400px) {
+                margin: 0 15px;
+            }
+            @media (max-width: 1100px) {
+                visibility: hidden;
+            }
+        }
+        .burgerMenu{
+            margin-left: auto;
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            @media (max-width: 1000px) {
+                display: block;
+            }
+        }
+
+        .searchGroup{
+            border-radius: 6px;
+            background: radial-gradient(100.04% 100.00% at 50.00% 0.00%, #26314E 0%, #252B3D 100%);
+            display: flex;
+            width: 400px;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            border: 1px solid linear-gradient(to right, #FFFFFF66, #FFFFFF00);
+            @media (max-width: 1325px) {
+                width: 380px;
+            }
+            @media (max-width: 1240px) {
+                width: 350px;
+            }
+            @media (max-width: 1200px) {
+                width: 320px;
+            }
+            @media (max-width: 1075px) {
+                width: 300px;
+            }
+            @media (max-width: 1050px) {
+                width: 250px;
+            }
+            // @media (max-width: 1200px) {
+            //     width: 250px;
+            // }
+            @media (max-width: 1000px) {
+                width: 98%;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                // padding: 0 20px;
+            }
+            .searchInput{
+                width: 100%;
+                height: 42px;
+                background: transparent;
+                padding: 10px 24px 10px 44px;
+                &::placeholder{
+                    color: #6D799C;
+                    font-size: 18px;
+                    font-weight: 500;
+                    
+                }
+            }
+            .searchIco{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 16px;
+            }
+        }
+
+        .navList{
+            display: flex;
+            gap: 32px;
+            margin-left: auto;
+            @media (max-width: 1300px) {
+                gap: 20px;
+            }
+            @media (max-width: 1000px) {
+                display: none;
+            }
+            .navItem{
+                color: #464E62;
+                font-size: 18px;
+                font-weight: 445;
+                cursor: pointer;
+                transition: 0.3s ease color;
+                @media (max-width: 1300px) {
+                    font-size: 16px;
+                }
+                @media (max-width: 1100px) {
+                    font-size: 14px;
+                }
+                &:hover{
+                    color: #66718d;
+                }
+            }
+           
+        }
+        .profile{
+            font-size: 18px;
+            font-weight: 445;
+            position: relative;
+            @media (max-width: 1000px) {
+                display: none;
+            }
+            .name{
+                color: #66718d;
+                cursor: pointer;
+            }
+            .profileDetails{
+                position: absolute;
+                width: 450%;
+                // height: 300px;
+                min-height: 200px;
+                background-color: rgb(9, 14, 23);
+                border-radius: 5px;
+                top: calc(100% + 15px);
+                // left: -450%;
+                right: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.3s ease opacity;
+                padding: 10px 5px;
+                cursor: auto;
+                .userBalanceEmpty{
+                    text-align: center;
+                    font-size: 14px;
+                    color: #6D799C;
+                }
+                .userBalance{
+                    text-align: center;
+                    font-size: 14px;
+                    color: #6D799C;
+                }
+                .logout{
+                    width: 90%;
+                    background-color: red;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    border-radius: 4px;
+                    position: absolute;
+                    bottom: 15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    &:hover{
+                        background-color: rgb(207, 7, 7);
+                    }
+                }
+            }
+            .detailsActive{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .actions{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            @media (max-width: 1000px) {
+                display: none;
+            }
+            @media (max-width: 1300px) {
+               button{
+                font-size: 16px;
+               }
+            }
+            @media (max-width: 1150px) {
+                button{
+                   font-size: 14px;
+                   padding: 5px 15px;
+                   }
+            }
+        }
+    }
+}
+.headerMargin{
+    width: 100%;
+    height: 98px;
+    @media (max-width: 1000px) {
+        height: 120px;
+    }
+}
+
+
+.sidebar{
+    position: fixed;
+    width: 75%;
+    background-color: #0B0F15;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 200;   
+    transform: translateX(100%); 
+    transition: 0.3s ease transform;
+    padding: 25px 10px;
+    display: none;
+    @media (max-width: 1000px) {
+        display: block;
+    }
+    .close{
+        width: fit-content;
+        color: #FFF;
+        fill: #FFF;
+    }
+    .logout{
+        position: absolute;
+        right: 10px;
+        top: 25px;
+        background-color: red;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 4px;
+        &:hover{
+            background-color: rgb(207, 7, 7);
+        }
+        &:active{
+            background-color: rgb(207, 7, 7);
+        }
+    }
+    .adminPanel{
+        display: block;
+        background: rgb(77, 114, 21);
+        color: #FFF;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 4px;
+        margin: 20px auto;
+    }
+    .sideBarActions{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px 0px;
+        button{
+            width: 100%;
+        }
+        @media (max-width: 410px) {
+            button{
+                font-size: 16px;
+                padding: 10px 18px;
+            }
+        }
+        @media (max-width: 360px) {
+            gap: 10px;
+            button{
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+       
+    }
+    .profileDetails{
+        font-size: 28px;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .userBalance{
+        margin-top: 5%;
+        font-size: 16px;
+        color: #6D799C;
+    }
+    .navList{
+        width: 100%;
+        position: absolute;
+        // bottom: 5%;
+        // margin-top: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        .navItem{
+            width: 100%;
+            text-align: center;
+            color: #464E62;
+            font-size: 18px;
+            font-weight: 445;
+            cursor: pointer;
+            transition: 0.3s ease color;
+            
+            &:hover{
+                color: #66718d;
+            }
+        }
+       }
+       .bottom{
+            top: 75%;
+       }
+       .rightDeserved{
+        width: 100%;
+        text-align: center;
+        color: #27314A;
+        font-family: 'Manrope', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; 
+        position: absolute;
+        bottom: 10px;
+        text-align: center;
+    }
+}
+.sidebarActive{
+    transform: translateX(0%); 
+
+}

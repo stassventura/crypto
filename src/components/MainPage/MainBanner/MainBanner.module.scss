@@ -1,0 +1,146 @@
+.mainBannerWrapper{
+    position: relative;
+    border-top: 1px solid; 
+    border-image: linear-gradient(to right, 
+    #252c41 15%, 
+    rgba(58, 163, 213, 0.4) 30%, 
+    rgba(58, 163, 213, 0.6) 40%, 
+    rgba(58, 163, 213, 0.8) 45%, 
+    rgba(58, 163, 213, 0.8) 55%, 
+    rgba(58, 163, 213, 0.6) 60%, 
+    rgba(58, 163, 213, 0.4) 70%, 
+    #252c41 85%) 1;
+    border-image-slice: 1 0 0 0; 
+    overflow: hidden;
+    // min-height: 334px;
+    z-index: 10;
+   .mainWrapper{
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 150px;
+
+    @media (max-width: 1200px) {
+            padding-top: 30px;
+            padding-bottom: 30px;
+    }
+    @media (max-width: 768px) {
+        padding-bottom: 50px;
+}
+    .content{
+        max-width: 50%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // border: 1px solid red;
+
+        @media (max-width: 1300px) {
+            max-width: 70%;
+            // width: 100%;
+            // margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            max-width: 100%;
+           width: fit-content;
+           text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        .upTitle{
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: radial-gradient(107.69% 100.00% at 50.00% 0.00%, #131A2E 0%, #111624 100%);
+            @media (max-width: 430px) {
+                width: 100%;
+            }
+        }
+        .title{
+            margin-top: 24px;
+            color: #D5EAFF;
+            font-size: 72px;
+            font-weight: 465;
+            line-height: 80px; 
+            letter-spacing: -1.44px;
+            position: relative;
+            @media (max-width: 1300px) {
+                font-size: 62px;
+                margin-top: 10px;
+            }
+            @media (max-width: 900px) {
+                font-size: 52px;
+                line-height: 60px; 
+            }
+            // @media (max-width: 732px) {
+            //     font-size: 42px;
+            //     line-height: 50px; 
+            // }
+            @media (max-width: 500px) {
+                font-size: 42px;
+                line-height: 50px; 
+            }
+            @media (max-width: 380px) {
+                font-size: 32px;
+                line-height: 40px; 
+            }
+        }
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            transform: translateY(100%);        
+            left: 0;
+            bottom: 0;
+            width: 780px;
+            height: 180px !important;
+            border-radius: 780px;
+            background: rgba(30, 120, 255, 0.24);
+            filter: blur(200px);
+            z-index: -10;
+        }
+        
+    }
+    .illustration{
+        user-select: none;
+        position: relative;
+        transform: translateX(16%);
+        @media (max-width: 1095px) {
+            max-width: 40%;
+            position: absolute;
+            right: 0;
+            transform: none;
+            z-index: -100;
+        }
+        @media (max-width: 768px) {
+           display: none;
+        }
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;      
+            right: 5%;
+            width: 780px;
+            transform: translateY(-50%);
+            height: 180px !important;
+            border-radius: 780px;
+            background: rgba(30, 120, 255, 0.24);
+            filter: blur(200px);
+            z-index: -10;
+        }
+    }
+   
+   }
+    
+}
+
+
+.margin{
+    width: 100%;
+    height: 100vh;
+}
